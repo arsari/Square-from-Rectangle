@@ -44,9 +44,9 @@ while (true) {
         //  call Figure() class function for rectangle calc
         var userRect = new Figure(userLength, userHeight);
 
-        // rectangle outputs
-        console.log(userRect.draw());
-        console.log('Rectangle total area is ' + userRect.getArea() + ' sq. units.');
+        //  rectangle outputs
+        userRect.draw();
+        console.log('\nRectangle total area is ' + userRect.getArea() + ' sq. units.');
         console.log('Rectangle perimeter length is ' + userRect.getPerimeter() + ' units.\n');
 
         //  determine square sides length
@@ -56,8 +56,8 @@ while (true) {
         var userSq = new Figure(sqSide, sqSide);
 
         // square outputs
-        console.log(userSq.draw());
-        console.log('Square total area is ' + userSq.getArea() + ' sq. units.');
+        userSq.draw();
+        console.log('\nSquare total area is ' + userSq.getArea() + ' sq. units.');
         console.log('Square perimeter length is ' + userSq.getPerimeter() + ' units.\n');
         return;
     }
