@@ -15,19 +15,23 @@ def getPerimeter(userLength, userHeight):
 
 # draw function definition
 def draw(userLength, userHeight):
-    tbRow = '  ' * userLength
-    mRow = '  ' * (userLength - 1)
+    tbRow = '--' * userLength
+    # bCol = tbRow[ :2]
+    bCol = '| '
+    mRow = '  ' * (userLength - 2)
+    # eCol = tbRow[-2: ]
+    eCol = ' |'
     i = 0
     if userLength == userHeight:
         print(Back.GREEN + tbRow + Back.RESET)
         while i < (userHeight - 2):
-            print(Back.GREEN + tbRow[0] + Back.RESET + mRow + Back.GREEN + tbRow[-1] + Back.RESET)
+            print(Back.GREEN + bCol + Back.RESET + mRow + Back.GREEN + eCol + Back.RESET)
             i += 1
         print(Back.GREEN + tbRow + Back.RESET)
     else:
         print(Back.CYAN + tbRow + Back.RESET)
         while i < (userHeight - 2):
-            print(Back.CYAN + tbRow[0] + Back.RESET + mRow + Back.CYAN + tbRow[-1] + Back.RESET)
+            print(Back.CYAN + bCol + Back.RESET + mRow + Back.CYAN + eCol + Back.RESET)
             i += 1
         print(Back.CYAN + tbRow + Back.RESET)
     return ''
@@ -36,8 +40,8 @@ def draw(userLength, userHeight):
 # input loop
 while True:
     # script description
-    print(Fore.RED + '\n==============================================' + Fore.YELLOW + 'v1.3.170304' + Fore.RESET)
-    print(Fore.CYAN + 'This script will draw and calculate the area and perimeter\nof a rectangle and them will draw and calculate the area\nand perimeter of a square using on the following inputs...\n(For exit, enter 0 in any of the inputs.)' + Fore.RESET)
+    print(Fore.RED + '\n===============================================' + Fore.YELLOW + 'v1.4.170306' + Fore.RESET)
+    print(Fore.CYAN + 'This Python2/Python3 script will draw and calculate the\narea and perimeter of a rectangle and them will draw and\ncalculate the area and perimeter of a square using the\nfollowing inputs...' + Style.DIM + Fore.WHITE + '\n(For exit, enter 0 in any of the inputs.)' + Fore.RESET + Style.RESET_ALL)
     print(Fore.BLUE + '----------------------------------------------------------' + Fore.RESET)
     # user input prompt and evaluation
     try:
@@ -59,14 +63,14 @@ while True:
     else:
         # rectangle outputs
         draw(userLength, userHeight)
-        print('\n' + Style.BRIGHT + Fore.YELLOW + 'Rectangle total area is ' + str(getArea(userLength, userHeight)) + ' sq. units.')
-        print('Rectangle perimeter length is ' + str(getPerimeter(userLength, userHeight)) + ' units.\n')
+        print('\n' + Style.BRIGHT + Fore.YELLOW + 'Rectangle total area is ' + Fore.WHITE + str(getArea(userLength, userHeight)) + Fore.RESET + Fore.YELLOW + ' sq. units.')
+        print('Rectangle perimeter length is ' + Fore.WHITE + str(getPerimeter(userLength, userHeight)) + Fore.RESET + Fore.YELLOW + ' units.\n' + Style.RESET_ALL)
 
         # determine square sides length
         sqrSide = int(getPerimeter(userLength, userHeight) / 4)
 
         # square outputs
         draw(sqrSide, sqrSide)
-        print('\nSquare total area is ' + str(getArea(sqrSide, sqrSide)) + ' sq. units.')
-        print('Square perimeter length is ' + str(getPerimeter(sqrSide, sqrSide)) + ' units.\n')
+        print('\n' + Style.BRIGHT + Fore.YELLOW + 'Square total area is ' + Fore.WHITE + str(getArea(sqrSide, sqrSide)) + Fore.RESET + Fore.YELLOW + ' sq. units.')
+        print('Square perimeter length is ' + Fore.WHITE + str(getPerimeter(sqrSide, sqrSide)) + Fore.RESET + Fore.YELLOW + ' units.\n' + Style.RESET_ALL)
         break

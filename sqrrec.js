@@ -13,18 +13,22 @@ function Figure(length, height) {
         return (this.length + this.height) * 2;
     };
     this.draw = function() {
-        var tbRow = '  '.repeat(this.length);
-        var mRow = '  '.repeat(this.length - 1);
+        var tbRow = '--'.repeat(this.length);
+        // var bCol = tbRow.slice(0, 2);
+        var bCol = '| ';
+        var mRow = '  '.repeat(this.length - 2);
+        // var eCol = tbRow.slice(this.length - 2, this.length);
+        var eCol = ' |';
         if (length === height) {
           console.log(tbRow.bgGreen);
           for (var i = 0; i < this.height - 2; i++) {
-              console.log(tbRow[0].bgGreen + mRow + tbRow[this.length].bgGreen);
+            console.log(bCol.bgGreen + mRow + eCol.bgGreen);
           }
           console.log(tbRow.bgGreen);
         } else {
           console.log(tbRow.bgCyan);
           for (var i = 0; i < this.height - 2; i++) {
-              console.log(tbRow[0].bgCyan + mRow + tbRow[this.length].bgCyan);
+            console.log(bCol.bgCyan + mRow + eCol.bgCyan);
           }
           console.log(tbRow.bgCyan);
         }
@@ -35,12 +39,12 @@ function Figure(length, height) {
 // input loop
 while (true) {
     // script description and user input prompt
-    console.log('\n=============================================='.red + 'v1.3.170304'.yellow);
-    console.log('This script will draw and calculate the area and perimeter\nof a rectangle and them will draw and calculate the area\nand perimeter of a square using on the following inputs...\n(For exit, press Enter in any of the inputs.)'.cyan);
-    console.log('----------------------------------------------------------'.blue);
+    console.log('\n================================================'.red + 'v1.4.170306'.yellow);
+    console.log('This JS script will draw and calculate the area and the\nperimeter of a rectangle and them will draw and calculate\nthe area and the perimeter of a square using the following\ninputs...'.cyan + '(For exit, press 0 or Enter in any of the inputs.)'.gray);
+    console.log('-----------------------------------------------------------'.blue);
     var userLength = Number(prompt('Enter a LENGTH value for the Rectangle: '.italic.yellow));
     var userHeight = Number(prompt('Enter a HEIGHT value for the Rectangle: '.italic.yellow));
-    console.log('==========================================================\n'.red);
+    console.log('===========================================================\n'.red);
 
     // user inputs evaluation
     if (isNaN(userLength) || isNaN(userHeight)) {
