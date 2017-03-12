@@ -1,4 +1,4 @@
-//  node terminal prompt-sync package require
+// node terminal prompt-sync package require
 var prompt = require('prompt-sync')();
 var colors = require('colors');
 
@@ -19,15 +19,17 @@ function Figure(length, height) {
         var mRow = '  '.repeat(this.length - 2);
         // var eCol = tbRow.slice(this.length - 2, this.length);
         var eCol = ' |';
+        var i;
+        var h = this.height - 2;
         if (length === height) {
           console.log(tbRow.bgGreen);
-          for (var i = 0; i < this.height - 2; i++) {
+          for (i = 0; i < h; i++) {
             console.log(bCol.bgGreen + mRow + eCol.bgGreen);
           }
           console.log(tbRow.bgGreen);
         } else {
           console.log(tbRow.bgCyan);
-          for (var i = 0; i < this.height - 2; i++) {
+          for (i = 0; i < h; i++) {
             console.log(bCol.bgCyan + mRow + eCol.bgCyan);
           }
           console.log(tbRow.bgCyan);

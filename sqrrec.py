@@ -22,15 +22,16 @@ def draw(userLength, userHeight):
     # eCol = tbRow[-2: ]
     eCol = ' |'
     i = 0
+    h = userHeight - 2
     if userLength == userHeight:
         print(Back.GREEN + tbRow + Back.RESET)
-        while i < (userHeight - 2):
+        while i < h:
             print(Back.GREEN + bCol + Back.RESET + mRow + Back.GREEN + eCol + Back.RESET)
             i += 1
         print(Back.GREEN + tbRow + Back.RESET)
     else:
         print(Back.CYAN + tbRow + Back.RESET)
-        while i < (userHeight - 2):
+        while i < h:
             print(Back.CYAN + bCol + Back.RESET + mRow + Back.CYAN + eCol + Back.RESET)
             i += 1
         print(Back.CYAN + tbRow + Back.RESET)
@@ -40,7 +41,7 @@ def draw(userLength, userHeight):
 # input loop
 while True:
     # script description
-    print(Fore.RED + '\n===============================================' + Fore.YELLOW + 'v1.4.170306' + Fore.RESET)
+    print(Fore.RED + '\n===============================================' + Fore.YELLOW + 'v1.5.170311' + Fore.RESET)
     print(Fore.CYAN + 'This Python2/Python3 script will draw and calculate the\narea and perimeter of a rectangle and them will draw and\ncalculate the area and perimeter of a square using the\nfollowing inputs...' + Style.DIM + Fore.WHITE + '\n(For exit, enter 0 in any of the inputs.)' + Fore.RESET + Style.RESET_ALL)
     print(Fore.BLUE + '----------------------------------------------------------' + Fore.RESET)
     # user input prompt and evaluation
@@ -48,18 +49,18 @@ while True:
         userLength = int(input(Fore.YELLOW + 'Enter a LENGTH value for the Rectangle: ' + Fore.RESET))
         userHeight = int(input(Fore.YELLOW + 'Enter a HEIGHT value for the Rectangle: ' + Fore.RESET))
     except Exception:
-        print('\n' + Back.RED + '*** INPUT ERROR ***' + Back.RESET + '\n' + Back.RED + 'Input value of Length and Height should be a Number.' + Back.RESET)
+        print('\n' + Back.RED + ' *** INPUT ERROR *** ' + Back.RESET + '\n' + Back.RED + ' Input value of Length and Height should be a Number. ' + Back.RESET)
         continue
     print(Fore.RED + '==========================================================\n' + Fore.RESET)
 
     # user input evaluation
     if userLength == 0 or userHeight == 0:
         print(Back.MAGENTA + '-----------------' + Back.RESET)
-        print(Back.MAGENTA + '|' + Back.RESET + '  Good Bye!!!  ' + Back.MAGENTA + '|' + Back.RESET)
+        print(Back.MAGENTA + '|' + Back.RESET + Style.BRIGHT + '  Good Bye!!!  ' + Style.RESET_ALL + Back.MAGENTA + '|' + Back.RESET)
         print(Back.MAGENTA + '-----------------' + Back.RESET + '\n')
         break
     elif userLength < 3 or userHeight < 3:
-        print(Back.RED + '*** INPUT ERROR ***' + Back.RESET + '\n' + Back.RED + 'Input value of Length and Height should not be less than 3 units.' + Back.RESET)
+        print(Back.RED + ' *** INPUT ERROR *** ' + Back.RESET + '\n' + Back.RED + ' Input value of Length and Height should not be less than 3 units. ' + Back.RESET)
     else:
         # rectangle outputs
         draw(userLength, userHeight)
