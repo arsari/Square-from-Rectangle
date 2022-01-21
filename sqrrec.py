@@ -1,5 +1,9 @@
-# encoding declaration
+# /usr/local/bin/python
+# encoding definition
 """coding=utf-8"""
+
+
+# import packages
 from colorama import Fore, Back, Style
 
 

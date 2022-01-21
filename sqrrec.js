@@ -1,8 +1,8 @@
-// node terminal prompt-sync package require
+// npm package require
 var prompt = require('prompt-sync')();
 var colors = require('colors');
 
-// object class function declaration
+// class definition
 function Figure(length, height) {
     this.length = length;
     this.height = height;
@@ -59,7 +59,7 @@ while (true) {
     } else if (userLength < 3 || userHeight < 3 ) {
         console.log('*** INPUT ERROR ***'.bgRed + '\n' + 'Input value of Length and Height should not be less than 3 units.'.bgRed);
     } else {
-        // call Figure() class function for rectangle calc
+        // call Figure() class for rectangle calc
         var userRect = new Figure(userLength, userHeight);
 
         // rectangle outputs
@@ -70,7 +70,7 @@ while (true) {
         // determine square sides length
         var sqrSide = Math.floor(userRect.getPerimeter() / 4);
 
-        // call Figure() class function for square calc
+        // call Figure() class for square calc
         var userSqr = new Figure(sqrSide, sqrSide);
 
         // square outputs

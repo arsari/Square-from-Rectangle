@@ -1,0 +1,27 @@
+{
+  "name": "square-from-rectangle",
+  "version": "1.0.0",
+  "description": "draw square from a rectangle perimeter length",
+  "main": "sqrrec.js",
+  "scripts": {
+    "test": "sqrrec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsari/Square-from-Rectangle.git"
+  },
+  "keywords": [
+    "js",
+    "python"
+  ],
+  "author": "Arturo Santiago-Rivera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arsari/Square-from-Rectangle/issues"
+  },
+  "homepage": "https://github.com/arsari/Square-from-Rectangle#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "prompt-sync": "^4.1.4"
+  }
+}
